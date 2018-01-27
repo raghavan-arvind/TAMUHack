@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // null
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Write a message to the database
