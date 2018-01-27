@@ -23,11 +23,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         writeNewUser("kushan", "kushan gupta", "kg@gmail.com");
 
-        writeNewUser("d", "kushan gupta", "k12g@gmail.com");
-        writeNewUser("kushsan", "kushanwe gupta", "kg@gmail.com");
-        writeNewUser("kushaasdfn", "kushanfd gupta", "kg@gmail.com");
-        writeNewUser("kushqwerfvqfan", "kushadfn gupta", "kg@gmail.com");
-
         mDatabase.keepSynced(true);
 
     }
