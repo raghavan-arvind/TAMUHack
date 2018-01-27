@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "617593869457",
+    "firebase_url": "https://tamuhack-f2875.firebaseio.com",
+    "project_id": "tamuhack-f2875",
+    "storage_bucket": "tamuhack-f2875.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617593869457:android:1126b5fde1cfe59b",
+        "android_client_info": {
+          "package_name": "kushangupta.volunteerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617593869457-qlachm126sq9ipddpnet95gmpujc467l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kushangupta.volunteerapp",
+            "certificate_hash": "794d2857f2339b40720fdf2a53ae29e0982ac633"
+          }
+        },
+        {
+          "client_id": "617593869457-s7ckhblk7n8ss0fm8smvvj7qnjiekdbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaAGrXBdo5cjJAPcMYdy8Nve9z3jpFCMk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617593869457-s7ckhblk7n8ss0fm8smvvj7qnjiekdbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
