@@ -10,7 +10,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DatabaseReference mDatabase;
+    private DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,43 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Write a message to the database
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        myRef = FirebaseDatabase.getInstance().getReference();
+        myRef.child("User").setValue("bob");
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        writeNewUser("kushan", "kushan gupta", "kg@gmail.com");
 
-        writeNewUser("d", "kushan gupta", "k12g@gmail.com");
-        writeNewUser("kushsan", "kushanwe gupta", "kg@gmail.com");
-        writeNewUser("kushaasdfn", "kushanfd gupta", "kg@gmail.com");
-        writeNewUser("kushqwerfvqfan", "kushadfn gupta", "kg@gmail.com");
-
-        mDatabase.keepSynced(true);
 
     }
 
-
-
-    private void writeNewUser(String userId, String name, String email) {
-        User user = new User(name, email);
-
-        mDatabase.child("users").child(userId).setValue(user);
-
-    }
-}
-
-@IgnoreExtraProperties
- class User {
-
-    public String username;
-    public String email;
-
-    public User() {
-        // Default constructor required for calls to DataSnapshot.getValue(User.class)
-    }
-
-    public User(String username, String email) {
-        this.username = username;
-        this.email = email;
-    }
 
 }
