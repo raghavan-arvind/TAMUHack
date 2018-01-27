@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
 class Event {
 
-    private String title;
-    private String description;
-    private int numPeople;
-    private int numPeopleRequired;
+    String title;
+    String description;
+    int numPeople;
+    int numPeopleRequired;
 
     String loc;
     private Image img;
@@ -47,6 +47,16 @@ class Event {
         this.numPeopleRequired = numPeopleRequired;
         this.loc = loc;
     }
+}
 
+class User {
+    String name;
+    String phoneNumber;
+    String email;
 
+    public User(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
 }
