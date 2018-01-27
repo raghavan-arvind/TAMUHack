@@ -12,9 +12,13 @@ import com.google.firebase.database.FirebaseDatabase;
 public class BackEnd {
     static DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
-    public void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location) {
+    public static void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location) {
         Event e = new Event(name, description, numPeople, numPeopleRequired, location);
-        myRef.child("Event").push().setValue(e);
+        myRef.child("Event").child(name).setValue(e);
+    }
+
+    public static void joinEvent(String eventName, User user) {
+        
     }
 }
 
