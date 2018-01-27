@@ -21,42 +21,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Write a message to the database
 
-        Event harvey = new Event("Hurricane Harvey Relief",
-                "Come help rebuild the areas destroyed by Hurricane Harvey!", 7, 200, "Houston, Texas")
-        myRef = FirebaseDatabase.getInstance().getReference();
-        myRef.child("Event").child("harvey-skdlhjfakdj").setValue(harvey);
+
     }
 
 
 }
 
-class Event {
 
-    String title;
-    String description;
-    int numPeople;
-    int numPeopleRequired;
 
-    String loc;
-    private Image img;
-
-    public Event(String title, String description, int numPeople, int numPeopleRequired, String loc) {
-        this.title = title;
-        this.description = description;
-        this.numPeople = numPeople;
-        this.numPeopleRequired = numPeopleRequired;
-        this.loc = loc;
-    }
-}
-
-class User {
-    String name;
-    String phoneNumber;
-    String email;
-
-    public User(String name, String phoneNumber, String email) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
-}
