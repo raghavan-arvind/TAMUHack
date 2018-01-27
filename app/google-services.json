@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "617593869457-t1brd5k8ck8nrji6q8eu806qoiq3ts80.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kushangupta.volunteerapp",
+            "certificate_hash": "7ebad34c740bd58dc018e957c5c80997cee74014"
+          }
+        },
+        {
           "client_id": "617593869457-qlachm126sq9ipddpnet95gmpujc467l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
