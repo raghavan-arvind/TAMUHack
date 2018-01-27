@@ -1,62 +1,61 @@
 package kushangupta.volunteerapp;
 
-import android.media.Image;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.location.Location;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.IgnoreExtraProperties;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DatabaseReference myRef;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
 
-        Event harvey = new Event("Hurricane Harvey Relief",
-                "Come help rebuild the areas destroyed by Hurricane Harvey!", 7, 200, "Houston, Texas")
-        myRef = FirebaseDatabase.getInstance().getReference();
-        myRef.child("Event").child("harvey-skdlhjfakdj").setValue(harvey);
+        myRef.setValue("Hello, World!");
+
+        Button orgLoginBtn = (Button) findViewById(R.id.orgLoginBtn);
+        Button volLoginBtn = (Button) findViewById(R.id.volunteerLoginBtn);
+        TextView alreadyTv = (TextView) findViewById(R.id.alreadyTv);
+
+        /* user clicked organization */
+        orgLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, OrgSignup.class);
+                startActivity(intent);
+            }
+        });
+
+        /* user clicked volunteer */
+        volLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, VolunteerSignup.class);
+                startActivity(intent);
+            }
+        });
+
+        /* user clicked already account */
+        alreadyTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 
-
-}
-
-class Event {
-
-    String title;
-    String description;
-    int numPeople;
-    int numPeopleRequired;
-
-    String loc;
-    private Image img;
-
-    public Event(String title, String description, int numPeople, int numPeopleRequired, String loc) {
-        this.title = title;
-        this.description = description;
-        this.numPeople = numPeople;
-        this.numPeopleRequired = numPeopleRequired;
-        this.loc = loc;
-    }
-}
-
-class User {
-    String name;
-    String phoneNumber;
-    String email;
-
-    public User(String name, String phoneNumber, String email) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
 }
