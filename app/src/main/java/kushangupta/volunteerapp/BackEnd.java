@@ -1,6 +1,7 @@
 package kushangupta.volunteerapp;
 
 import android.media.Image;
+import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,11 +28,12 @@ public class BackEnd {
 
     public static void newUser(String name, String email, String password) {
         User user = new User(name, email, password);
+        Log.d("i", "slkdfjkljsdfklj");
         myRef.child("Users").child(name).setValue(user);
     }
 
     public static void getvalue(String s){
-        myRef.child("User").child("Arvind").addValueEventListener(new ValueEventListener() {
+        myRef.child("User").child("joke").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
