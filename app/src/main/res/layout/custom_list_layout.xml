@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,43 +10,43 @@
         android:id="@+id/eventTitleTv"
         android:layout_width="246dp"
         android:layout_height="33dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_alignLeft="@+id/eventDescTv"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/eventDescTv"
+        android:layout_marginTop="32dp"
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/eventDescTv"
         android:layout_width="362dp"
         android:layout_height="51dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
+        android:layout_below="@+id/eventTitleTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
         android:text="TextView"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventTitleTv"/>
+        app:layout_constraintTop_toBottomOf="@+id/eventTitleTv" />
 
     <TextView
         android:id="@+id/dateTv"
         android:layout_width="102dp"
         android:layout_height="34dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignBottom="@+id/eventTitleTv"
+        android:layout_toEndOf="@+id/eventTitleTv"
+        android:layout_toRightOf="@+id/eventTitleTv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/eventTitleTv"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
-</android.support.constraint.ConstraintLayout>
+        app:layout_constraintVertical_bias="0.013" />
+</RelativeLayout>

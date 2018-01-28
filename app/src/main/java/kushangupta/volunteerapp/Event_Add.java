@@ -31,7 +31,7 @@ public class Event_Add extends AppCompatActivity {
         final EditText eventName = (EditText) findViewById(R.id.eventName);
         final EditText eventDescript = (EditText) findViewById(R.id.eventDescript);
         final EditText eventAddress = (EditText) findViewById(R.id.eventAddress);
-        final NumberPicker numPeople = (NumberPicker) findViewById(R.id.numberPicker);
+        final EditText numPeople = (EditText) findViewById(R.id.numberPicker);
         final CalendarView eventDate = (CalendarView) findViewById(R.id.eventDate);
 
 
@@ -53,15 +53,17 @@ public class Event_Add extends AppCompatActivity {
                 String address = eventAddress.getText().toString();
                 String t;
                 boolean PM = false;
+                int hours = time.getHour();
                 if (time.getHour() > 12) {
+                    hours -= 12;
                     PM = true;
                 }
-                int hours = time.getHour() - 12;
+
                 String end = PM ? "PM" : "AM";
 
                 t = String.format("%d/%02d %02d:%02d", month, day, hours, time.getMinute());
 
-                int num = numPeople.getValue();
+                int num = Integer.parseInt(numPeople.getText().toString());
 
                 // converting date to readable
 
