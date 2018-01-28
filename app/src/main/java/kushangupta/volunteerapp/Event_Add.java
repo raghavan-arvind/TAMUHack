@@ -52,22 +52,30 @@ public class Event_Add extends AppCompatActivity {
                 String desc = eventDescript.getText().toString();
                 String address = eventAddress.getText().toString();
                 String t;
+                String dateString;
                 boolean PM = false;
-                int hours = time.getHour();
-                if (time.getHour() > 12) {
-                    hours -= 12;
-                    PM = true;
-                }
-
-                String end = PM ? "PM" : "AM";
-
-                t = String.format("%d/%02d %02d:%02d", month, day, hours, time.getMinute());
-
                 int num = Integer.parseInt(numPeople.getText().toString());
 
-                // converting date to readable
+                if (time == null) {
+                    dateString = "1/28 3:00 PM";
+                } else {
+                    int hours = time.getHour();
+                    if (time.getHour() > 12) {
+                        hours -= 12;
+                        PM = true;
+                    }
 
-                String dateString = t + " " + end;
+                    String end = PM ? "PM" : "AM";
+
+                    t = String.format("%d/%02d %02d:%02d", month, day, hours, time.getMinute());
+
+
+
+                    // converting date to readable
+
+                    dateString = t + " " + end;
+                }
+
 
                 BackEnd.addEvent(name, desc, 0, num, address, dateString);
                 //onSelectedDayChange(eventDate, );
