@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="kushangupta.volunteerapp.splash"
-    android:background="@drawable/homegreen">
+    android:background="@drawable/homegreen2">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
