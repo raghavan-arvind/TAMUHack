@@ -118,14 +118,5 @@
             </android.support.design.widget.TextInputLayout>
 
 
-
         </LinearLayout>
-
-
-        <NumberPicker
-            android:id="@+id/numberPicker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
 </ScrollView>
