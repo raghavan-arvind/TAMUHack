@@ -56,12 +56,20 @@
                     android:hint="Description"
                     android:inputType="textMultiLine" />
 
+                <NumberPicker
+                    android:id="@+id/numberPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:layout_marginBottom="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="0dp"
                     android:layout_weight="1"
                     android:text="Number of volunteers needed" />
 
@@ -109,12 +117,10 @@
 
             </android.support.design.widget.TextInputLayout>
 
+
+
         </LinearLayout>
 
-    <NumberPicker
-        android:id="@+id/numberPicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+
 
 </ScrollView>
