@@ -34,6 +34,7 @@ public class Event_Add extends AppCompatActivity {
         final NumberPicker numPeople = (NumberPicker) findViewById(R.id.numberPicker);
         final CalendarView eventDate = (CalendarView) findViewById(R.id.eventDate);
 
+
         eventDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
