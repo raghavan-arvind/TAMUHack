@@ -51,12 +51,21 @@ public class Event_Add extends AppCompatActivity {
                 String name = eventName.getText().toString();
                 String desc = eventDescript.getText().toString();
                 String address = eventAddress.getText().toString();
-                String t = (time.getHour() > 12 ? time.getHour()-12: time.getHour()) + ":" + time.getMinute() + (time.getHour() > 12 ? " PM" : " AM");
+                String t;
+                boolean PM = false;
+                if (time.getHour() > 12) {
+                    PM = true;
+                }
+                int hours = time.getHour() - 12;
+                String end = PM ? "PM" : "AM";
+
+                t = String.format("%d/%02d %02d:%02d", month, day, hours, time.getMinute());
+
                 int num = numPeople.getValue();
 
                 // converting date to readable
 
-                String dateString = String.format("%d/%d ", month, day) + t;
+                String dateString = t;
 
                 BackEnd.addEvent(name, desc, 0, num, address, dateString);
                 //onSelectedDayChange(eventDate, );
