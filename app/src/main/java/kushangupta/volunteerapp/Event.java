@@ -14,7 +14,6 @@ public class Event {
     String calendarDate;
     int numPeople;
     int numPeopleRequired;
-    private Image img;
 
     public Event() {
 
