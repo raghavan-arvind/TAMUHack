@@ -1,9 +1,10 @@
+
 package kushangupta.volunteerapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class event_add extends AppCompatActivity {
+public class Event_Add extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -11,3 +12,4 @@ public class event_add extends AppCompatActivity {
         setContentView(R.layout.activity_event_add);
     }
 }
+

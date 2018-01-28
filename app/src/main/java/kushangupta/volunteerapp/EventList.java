@@ -5,7 +5,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class EventList extends AppCompatActivity {
 
@@ -19,7 +18,7 @@ public class EventList extends AppCompatActivity {
         addEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EventList.this, event_add.class);
+                Intent intent = new Intent(EventList.this, Event_Add.class);
                 startActivity(intent);
             }
         });
