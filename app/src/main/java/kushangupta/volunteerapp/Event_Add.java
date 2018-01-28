@@ -67,7 +67,7 @@ public class Event_Add extends AppCompatActivity {
 
                 // converting date to readable
 
-                String dateString = t;
+                String dateString = t + " " + end;
 
                 BackEnd.addEvent(name, desc, 0, num, address, dateString);
                 //onSelectedDayChange(eventDate, );
