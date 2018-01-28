@@ -48,6 +48,8 @@ public class BackEnd {
     public static ArrayList<Event> getEvents() {
         return new ArrayList<Event>(events);
     }
+    ArrayList<Event> myEvent = BackEnd.getEvents();
+
 
     public static void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location, String calendarDate) {
         Event e = new Event(name, description, numPeople, numPeopleRequired, location, calendarDate);
