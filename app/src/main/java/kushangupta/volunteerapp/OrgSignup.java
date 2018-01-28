@@ -30,7 +30,6 @@ public class OrgSignup extends AppCompatActivity {
                 String phoneNumber = orgPhoneNumEt.getText().toString();
 
 
-                /* TODO: save pass in a page signup directs to*/
                 Intent intent = new Intent(OrgSignup.this, EventList.class);
                 intent.putExtra("ORGNAME", orgName);//keyvalue
                 intent.putExtra("ORGEMAIL", email);

@@ -28,7 +28,6 @@
         <activity android:name=".OrgSignup" />
         <activity android:name=".EventList" />
         <activity android:name=".VolEventList" />
-        <activity android:name=".OrgMakeEvent"></activity>
     </application>
 
 </manifest>
