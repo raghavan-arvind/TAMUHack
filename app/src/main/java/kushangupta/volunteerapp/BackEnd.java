@@ -47,6 +47,7 @@ public class BackEnd {
 class Event {
 
     String title;
+    String address;
     String description;
     int numPeople;
     int numPeopleRequired;
