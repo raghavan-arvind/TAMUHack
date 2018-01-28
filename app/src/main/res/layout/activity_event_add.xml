@@ -48,6 +48,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <Button
+                    android:id="@+id/photoBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:text="Upload a photo" />
+
                 <MultiAutoCompleteTextView
                     android:id="@+id/eventDescript"
                     android:layout_width="match_parent"
@@ -60,7 +69,7 @@
                     android:id="@+id/numberPicker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -109,7 +118,7 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:text="Date of @string/event_setup" />
+                    android:text="Date of event" />
 
                 <Button
                     android:id="@+id/eventCreateBtn"

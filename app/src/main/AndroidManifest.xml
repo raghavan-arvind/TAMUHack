@@ -14,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAFQRpdNRT_GF0d54GgW-mnQraeT1qUe14" />
@@ -37,7 +36,8 @@
         <activity android:name=".EventList" />
         <activity android:name=".VolEventList" />
         <activity android:name=".Event_Add" />
-        <activity android:name=".splash"></activity>
+        <activity android:name=".splash" />
+        <activity android:name=".EventSignup"></activity>
     </application>
 
 </manifest>

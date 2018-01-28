@@ -86,8 +86,11 @@ public class EventList extends AppCompatActivity implements AdapterView.OnItemCl
 
                 TextView eventTitleTv = (TextView) convertView.findViewById(R.id.eventTitleTv);
                 TextView eventDescTv = (TextView) convertView.findViewById(R.id.eventDescTv);
+                TextView eventDate = (TextView) convertView.findViewById(R.id.dateTv);
                 eventTitleTv.setText(myEvents.get(position).getTitle());
                 eventDescTv.setText(myEvents.get(position).getDescription());
+                eventDate.setText(myEvents.get(position).calendarDate);
+
 
                 return convertView;
 
