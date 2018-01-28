@@ -8,6 +8,7 @@ import android.view.View;
 
 public class EventList extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
