@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 
 
 import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,12 +48,17 @@ public class Event_Add extends AppCompatActivity {
                 String dateString = sdf.format(resultdate);
 
                 BackEnd.addEvent(name, desc, 0, num, address, dateString);
-
+                //onSelectedDayChange(eventDate, );
 
                 Intent intent = new Intent(Event_Add.this, EventList.class);
                 startActivity(intent);
             }
-        });
+        });}
+
+        public void onSelectedDayChange (CalendarView view, int year, int month, int dayOfMonth){
+
+        }
+
     }
-}
+
 

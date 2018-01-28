@@ -9,12 +9,45 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 /**
  * Created by raghavan on 1/27/18.
  */
 
 public class BackEnd {
     static DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+    private static ArrayList<Event> events = new ArrayList<Event>();
+
+    public static void loadBackEnd() {
+        myRef.keepSynced(true);
+        myRef.child("Event").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot c : snapshot.getChildren()) {
+                    Event e = c.getValue(Event.class);
+                    boolean in = false;
+                    for (Event f : events) {
+                        if (f.title.equals(e.title))
+                            in = true;
+                    }
+
+                    if (!in) {
+                        events.add(e);
+                        System.out.println(e.title);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public static ArrayList<Event> getEvents() {
+        return new ArrayList<Event>(events);
+    }
 
     public static void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location, String calendarDate) {
         Event e = new Event(name, description, numPeople, numPeopleRequired, location, calendarDate);
@@ -42,26 +75,6 @@ public class BackEnd {
             public void onCancelled(DatabaseError databaseError) {
             }
         });    }
-}
-
-class Event {
-
-    String title;
-    String address;
-    String description;
-    String calendarDate;
-    int numPeople;
-    int numPeopleRequired;
-    private Image img;
-
-    public Event(String title, String description, int numPeople, int numPeopleRequired, String address, String calendarDate) {
-        this.title = title;
-        this.description = description;
-        this.numPeople = numPeople;
-        this.numPeopleRequired = numPeopleRequired;
-        this.calendarDate = calendarDate;
-        this.address = address;
-    }
 }
 
 class User {
