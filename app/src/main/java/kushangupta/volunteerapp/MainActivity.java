@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        BackEnd.joinEvent("Harvey", new User("arvind", "3424234", "lkdjfksjf@sdlfkjsdf"));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
