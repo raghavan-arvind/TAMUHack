@@ -1,4 +1,4 @@
-/*
+
 package kushangupta.volunteerapp;
 
 import android.support.v7.app.AppCompatActivity;
@@ -12,4 +12,4 @@ public class Event_Add extends AppCompatActivity {
         setContentView(R.layout.activity_event_add);
     }
 }
-*/
+

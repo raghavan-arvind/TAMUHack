@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 public class EventList extends AppCompatActivity {
-    private GeoDataClient mGeoDataClient;
-    private PlaceDetectionClient mPlaceDetectionClient;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
