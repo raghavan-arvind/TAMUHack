@@ -30,12 +30,12 @@ public class OrgSignup extends AppCompatActivity {
 
 
                 /* TODO: save pass in a page signup directs to*/
-                //Intent intent = new Intent(OrgSignup.this, )
-                //intent.putExtra("ORGNAME", orgName);//keyvalue
-                //intent.putExtra("ORGEMAIL", email);
-                //intent.putExtra("PASSWORD", password);
-                //intent.putExtra("PHONENUMBER", phoneNumber);
-                //startActivity(intent);
+                Intent intent = new Intent(OrgSignup.this, EventList.class);
+                intent.putExtra("ORGNAME", orgName);//keyvalue
+                intent.putExtra("ORGEMAIL", email);
+                intent.putExtra("PASSWORD", password);
+                intent.putExtra("PHONENUMBER", phoneNumber);
+                startActivity(intent);
             }
         });
     }

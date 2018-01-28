@@ -1,4 +1,3 @@
-/*
 package kushangupta.volunteerapp;
 
 import android.os.Bundle;
@@ -28,4 +27,3 @@ public class event_list extends AppCompatActivity {
     }
 
 }
-*/
