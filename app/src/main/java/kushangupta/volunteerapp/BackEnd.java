@@ -18,7 +18,7 @@ public class BackEnd {
     }
 
     public static void joinEvent(String eventName, User user) {
-        
+        myRef.child("Event").child(eventName).child("Users").child(user.email).setValue(user);
     }
 }
 
