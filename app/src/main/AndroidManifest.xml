@@ -28,6 +28,8 @@
         <activity android:name=".OrgSignup" />
         <activity android:name=".EventList" />
         <activity android:name=".VolEventList" />
+        <activity android:name=".event_add" />
+        <activity android:name=".event_add2"></activity>
     </application>
 
 </manifest>
