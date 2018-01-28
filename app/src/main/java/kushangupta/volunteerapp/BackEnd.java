@@ -32,8 +32,8 @@ public class BackEnd {
         myRef.child("Users").child(name).setValue(user);
     }
 
-    public static void getvalue(String s){
-        myRef.child("User").child("joke").addValueEventListener(new ValueEventListener() {
+    public static void getName(String name){
+        myRef.child("Users").child(name).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
