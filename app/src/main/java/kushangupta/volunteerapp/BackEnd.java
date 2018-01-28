@@ -1,9 +1,13 @@
 package kushangupta.volunteerapp;
 
 import android.media.Image;
+import android.util.Log;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * Created by raghavan on 1/27/18.
@@ -18,10 +22,23 @@ public class BackEnd {
     }
 
     public static void joinEvent(String eventName, User user) {
-        // null
         myRef.child("Event").child(eventName).child("Users").child(user.email).setValue(user);
     }
+
+
+
+    public static void getvalue(String s){
+        myRef.child("User").child("Arvind").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });    }
 }
+
 
 class Event {
 

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        myRef = FirebaseDatabase.getInstance().getReference();
+        myRef.child("User").child("Arvind").setValue(new User("Arvind", "5234234","raghavan@ut.com"));
 
-        BackEnd.joinEvent("Harvey", new User("arvind", "3424234", "lkdjfksjf@sdlfkjsdf"));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Button volLoginBtn = (Button) findViewById(R.id.volunteerLoginBtn);
         TextView alreadyTv = (TextView) findViewById(R.id.alreadyTv);
 
+        BackEnd.getvalue("");
         /* user clicked organization */
         orgLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
