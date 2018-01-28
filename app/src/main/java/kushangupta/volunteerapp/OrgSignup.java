@@ -1,3 +1,4 @@
+
 package kushangupta.volunteerapp;
 
 import android.content.Intent;
@@ -39,8 +40,6 @@ public class OrgSignup extends AppCompatActivity {
             }
         });
     }
-
-
 
 
 
