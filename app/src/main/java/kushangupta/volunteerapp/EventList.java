@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class EventList extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class EventList extends AppCompatActivity {
     String[] orgActivities = {"event_add", "org_signup"};
-    ArrayList<kushangupta.volunteerapp.Event> myEvents;
+    static ArrayList<kushangupta.volunteerapp.Event> myEvents;
 
 
     @Override
@@ -43,7 +43,14 @@ public class EventList extends AppCompatActivity implements AdapterView.OnItemCl
         myEvents = BackEnd.getEvents();
         CustomAdapter myAdapter = new CustomAdapter();
         lst.setAdapter(myAdapter);
-
+        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(EventList.this, EventSignup.class);
+                intent.putExtra("Position", position);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -58,11 +65,12 @@ public class EventList extends AppCompatActivity implements AdapterView.OnItemCl
             });
         }
     }
-
+        /*
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            TextView tv = (TextView) view;
-            Toast.makeText(this, "You click on" + tv.getText() + position, Toast.LENGTH_SHORT).show();
-        }
+            Intent intent = new Intent(EventList.this, EventSignup.class);
+            intent.putExtra("Position", position);
+            startActivity(intent);
+        } */
         class CustomAdapter extends BaseAdapter {
 
             @Override
