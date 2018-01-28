@@ -3,6 +3,7 @@ package kushangupta.volunteerapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,7 @@ public class OrgSignup extends AppCompatActivity {
                 intent.putExtra("ORGEMAIL", email);
                 intent.putExtra("PASSWORD", password);
                 intent.putExtra("PHONENUMBER", phoneNumber);
+                Log.d("DebugStuff", "ISㄴ아ㅣㅓㄹㅇㄴㄹㄴㅇㄹITWORKING");
                 startActivity(intent);
             }
         });

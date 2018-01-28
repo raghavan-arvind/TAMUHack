@@ -1,5 +1,6 @@
 package kushangupta.volunteerapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,21 +24,19 @@ public class VolunteerSignup extends AppCompatActivity {
         volSignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String volName = volNameEt.getText().toString();
-                String email = volEmailEt.getText().toString();
-                String password = volPasswordEt.getText().toString();
-                String phoneNumber = volPhoneNumEt.getText().toString();
+//                String volName = volNameEt.getText().toString();
+//                String email = volEmailEt.getText().toString();
+//                String password = volPasswordEt.getText().toString();
+//                String phoneNumber = volPhoneNumEt.getText().toString();
 
-                BackEnd.newUser(volName, email, password);
+                //BackEnd.newUser(volName, email, password);
 
-
-                /* TODO: save pass in a page signup directs to*/
-                //Intent intent = new Intent(OrgSignup.this, )
-                //intent.putExtra("VOLNAME", volName);//keyvalue
-                //intent.putExtra("VOLEMAIL", email);
-                //intent.putExtra("PASSWORD", password);
-                //intent.putExtra("PHONENUMBER", phoneNumber);
-                //startActivity(intent);
+                Intent intent = new Intent(VolunteerSignup.this, VolEventList.class);
+//                intent.putExtra("VOLNAME", volName);//keyvalue
+//                intent.putExtra("VOLEMAIL", email);
+//                intent.putExtra("PASSWORD", password);
+//                intent.putExtra("PHONENUMBER", phoneNumber);
+                startActivity(intent);
             }
         });
     }
