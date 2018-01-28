@@ -19,6 +19,7 @@ public class Event {
     public Event() {
 
     }
+
     public Event(String title, String description, int numPeople, int numPeopleRequired, String address, String calendarDate) {
         this.title = title;
         this.description = description;
@@ -27,4 +28,10 @@ public class Event {
         this.calendarDate = calendarDate;
         this.address = address;
     }
+
+        public String getTitle() { return this.title; }
+
+        public String getDescription() { return this.description; }
+
+
 }
