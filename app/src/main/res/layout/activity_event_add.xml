@@ -79,14 +79,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:layout_marginBottom="0dp"
-                    android:layout_weight="1"
-                    android:text="Time of event" />
-
                 <TimePicker
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -96,15 +88,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
                     android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:text="Date" />
+                    android:text="Time of event" />
 
                 <CalendarView
                     android:id="@+id/eventDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="Date of @string/event_setup" />
 
                 <Button
                     android:id="@+id/eventCreateBtn"

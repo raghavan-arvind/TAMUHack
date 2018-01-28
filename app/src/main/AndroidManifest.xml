@@ -16,7 +16,11 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAFQRpdNRT_GF0d54GgW-mnQraeT1qUe14"/>
+            android:value="AIzaSyAFQRpdNRT_GF0d54GgW-mnQraeT1qUe14" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +36,7 @@
         <activity android:name=".EventList" />
         <activity android:name=".VolEventList" />
         <activity android:name=".Event_Add" />
+        <activity android:name=".splash"></activity>
     </application>
 
 </manifest>
