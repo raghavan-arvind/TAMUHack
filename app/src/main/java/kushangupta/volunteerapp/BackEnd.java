@@ -20,12 +20,22 @@ public class BackEnd {
     private static ArrayList<Event> events = new ArrayList<Event>();
 
     public static void loadBackEnd() {
+        myRef.keepSynced(true);
         myRef.child("Event").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot c : snapshot.getChildren()) {
                     Event e = c.getValue(Event.class);
-                    events.add(e);
+                    boolean in = false;
+                    for (Event f : events) {
+                        if (f.title.equals(e.title))
+                            in = true;
+                    }
+
+                    if (!in) {
+                        events.add(e);
+                        System.out.println(e.title);
+                    }
                 }
             }
 

@@ -16,6 +16,9 @@ public class Event {
     int numPeopleRequired;
     private Image img;
 
+    public Event() {
+
+    }
     public Event(String title, String description, int numPeople, int numPeopleRequired, String address, String calendarDate) {
         this.title = title;
         this.description = description;
