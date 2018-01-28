@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="kushangupta.volunteerapp.MainActivity">
+    tools:context="kushangupta.volunteerapp.MainActivity"
+    android:background="@drawable/homegreen3">
 
     <Button
         android:id="@+id/orgLoginBtn"
@@ -46,8 +47,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/patrick_hand"
-        android:text="Sign up as an Organization or a Volunteer?"
+        android:text="Sign up as an Organization or a Volunteer"
         android:textAlignment="center"
+        android:textColorLink="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -64,7 +66,7 @@
         android:fontFamily="@font/patrick_hand"
         android:text="Already have an account?"
         android:textAlignment="center"
-        android:textColor="?attr/actionModeSplitBackground"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/volunteerLoginBtn" />
