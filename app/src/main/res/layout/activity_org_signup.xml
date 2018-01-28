@@ -7,48 +7,48 @@
     tools:context="kushangupta.volunteerapp.OrgSignup">
 
     <EditText
-        android:id="@+id/orgNameEditText"
+        android:id="@+id/orgNameEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="164dp"
         android:ems="10"
+        android:hint="Organization Name"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/orgEmailEditText"
+        android:id="@+id/orgEmailEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/orgNameEditText"
+        app:layout_constraintBottom_toTopOf="@+id/orgNameEt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/orgPhoneNumEditText"
+        android:id="@+id/orgPhoneNumEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="Phone Number"
         android:inputType="phone"
-        android:text="Phone Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orgNameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/orgNameEt" />
 
     <EditText
-        android:id="@+id/orgPasswordEditText"
+        android:id="@+id/orgPasswordEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
@@ -56,13 +56,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textVisiblePassword"
-        android:text="Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orgPhoneNumEditText"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintTop_toBottomOf="@+id/orgPhoneNumEt"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/orgSignupTv"
@@ -75,7 +75,7 @@
         android:text="Organization Signup"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/volNameEditText"
+        app:layout_constraintBottom_toTopOf="@+id/volNameET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

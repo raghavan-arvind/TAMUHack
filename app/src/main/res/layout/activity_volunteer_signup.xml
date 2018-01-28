@@ -7,57 +7,57 @@
     tools:context="kushangupta.volunteerapp.VolunteerSignup">
 
     <EditText
-        android:id="@+id/volNameEditText"
+        android:id="@+id/volNameEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/volEmailEditText"
+        app:layout_constraintBottom_toTopOf="@+id/volEmailEt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/volEmailEditText"
+        android:id="@+id/volEmailEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/volPhoneNumEditText"
+        app:layout_constraintBottom_toTopOf="@+id/volPhoneNumEt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/volPhoneNumEditText"
+        android:id="@+id/volPhoneNumEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="Phone Number"
         android:inputType="phone"
-        android:text="Phone Number"
-        app:layout_constraintBottom_toTopOf="@+id/volPasswordEditText"
+        app:layout_constraintBottom_toTopOf="@+id/volPasswordEt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/volPasswordEditText"
+        android:id="@+id/volPasswordEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="260dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textVisiblePassword"
-        android:text="Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
