@@ -40,7 +40,7 @@ public class Event_Add extends AppCompatActivity {
                 year = i; month = i1+1; day = i2;
             }
         });
-        final TimePicker time = (TimePicker) findViewById(R.id.eventDate);
+        final TimePicker time = (TimePicker) findViewById(R.id.time);
 
         Button eventCreateBtn = (Button) findViewById(R.id.eventCreateBtn);
 
@@ -50,12 +50,12 @@ public class Event_Add extends AppCompatActivity {
                 String name = eventName.getText().toString();
                 String desc = eventDescript.getText().toString();
                 String address = eventAddress.getText().toString();
-                String t = (time.getHour() > 12 ? time.getHour()-12: time.getHour()) + " " + time.getMinute() + (time.getHour() > 12 ? "PM" : "AM");
+                String t = (time.getHour() > 12 ? time.getHour()-12: time.getHour()) + ":" + time.getMinute() + (time.getHour() > 12 ? " PM" : " AM");
                 int num = numPeople.getValue();
 
                 // converting date to readable
 
-                String dateString = String.format("%d/%d/%d ", month, day, year) + t;
+                String dateString = String.format("%d/%d ", month, day) + t;
 
                 BackEnd.addEvent(name, desc, 0, num, address, dateString);
                 //onSelectedDayChange(eventDate, );
@@ -65,11 +65,6 @@ public class Event_Add extends AppCompatActivity {
                 startActivity(intent);
             }
         });}
-
-        public void onSelectedDayChange (CalendarView view, int year, int month, int dayOfMonth){
-
-        }
-
     }
 
 
