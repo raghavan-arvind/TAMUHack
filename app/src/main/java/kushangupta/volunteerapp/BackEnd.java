@@ -16,8 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 public class BackEnd {
     static DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
-    public static void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location, String calendarDate, String address, int time) {
-        Event e = new Event(name, description, numPeople, numPeopleRequired, location, calendarDate, address, time);
+    public static void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location, String calendarDate) {
+        Event e = new Event(name, description, numPeople, numPeopleRequired, location, calendarDate);
         myRef.child("Event").child(name).setValue(e);
     }
 
@@ -52,19 +52,15 @@ class Event {
     String calendarDate;
     int numPeople;
     int numPeopleRequired;
-    int time;
-    String location;
     private Image img;
 
-    public Event(String title, String description, int numPeople, int numPeopleRequired, String location, String calendarDate, String address, int time) {
+    public Event(String title, String description, int numPeople, int numPeopleRequired, String address, String calendarDate) {
         this.title = title;
         this.description = description;
         this.numPeople = numPeople;
         this.numPeopleRequired = numPeopleRequired;
-        this.location = location;
         this.calendarDate = calendarDate;
         this.address = address;
-        this.time = time;
     }
 }
 
