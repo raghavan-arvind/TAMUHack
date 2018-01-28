@@ -28,6 +28,8 @@ public class VolunteerSignup extends AppCompatActivity {
                 String password = volPasswordEt.getText().toString();
                 String phoneNumber = volPhoneNumEt.getText().toString();
 
+                BackEnd.newUser(volName, email, password);
+
 
                 /* TODO: save pass in a page signup directs to*/
                 //Intent intent = new Intent(OrgSignup.this, )

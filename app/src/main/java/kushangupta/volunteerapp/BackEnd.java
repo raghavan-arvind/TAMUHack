@@ -1,7 +1,6 @@
 package kushangupta.volunteerapp;
 
 import android.media.Image;
-import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,10 +21,14 @@ public class BackEnd {
     }
 
     public static void joinEvent(String eventName, User user) {
+        // null
         myRef.child("Event").child(eventName).child("Users").child(user.email).setValue(user);
     }
 
-
+    public static void newUser(String name, String email, String password) {
+        User user = new User(name, email, password);
+        myRef.child("Users").child(name).setValue(user);
+    }
 
     public static void getvalue(String s){
         myRef.child("User").child("Arvind").addValueEventListener(new ValueEventListener() {
@@ -38,7 +41,6 @@ public class BackEnd {
             }
         });    }
 }
-
 
 class Event {
 
@@ -61,12 +63,12 @@ class Event {
 
 class User {
     String name;
-    String phoneNumber;
     String email;
+    private String password;
 
     public User(String name, String phoneNumber, String email) {
         this.name = name;
-        this.phoneNumber = phoneNumber;
         this.email = email;
+        this.password = password;
     }
 }
