@@ -31,7 +31,7 @@
         <activity android:name=".OrgSignup" />
         <activity android:name=".EventList" />
         <activity android:name=".VolEventList" />
-        <activity android:name=".event_add" />
+        <activity android:name=".Event_Add" />
     </application>
 
 </manifest>
