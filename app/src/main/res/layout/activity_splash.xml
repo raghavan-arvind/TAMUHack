@@ -7,4 +7,15 @@
     tools:context="kushangupta.volunteerapp.splash"
     android:background="@drawable/homegreen2">]
 
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/patrick_hand"
+        android:text="Halcyon"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="60dp" />
 </RelativeLayout>
