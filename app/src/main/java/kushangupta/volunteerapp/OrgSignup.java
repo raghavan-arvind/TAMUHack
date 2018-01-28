@@ -36,6 +36,7 @@ public class OrgSignup extends AppCompatActivity {
                 intent.putExtra("ORGEMAIL", email);
                 intent.putExtra("PASSWORD", password);
                 intent.putExtra("PHONENUMBER", phoneNumber);
+                intent.putExtra("SOURCE", "org_signup");
                 startActivity(intent);
             }
         });

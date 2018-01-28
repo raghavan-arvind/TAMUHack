@@ -17,10 +17,11 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EventList extends AppCompatActivity implements AdapterView.OnItemClickListener {
-
+    String[] orgActivities = {"event_add", "org_signup"};
     ArrayList<kushangupta.volunteerapp.Event> myEvents;
 
 
@@ -31,7 +32,7 @@ public class EventList extends AppCompatActivity implements AdapterView.OnItemCl
         Intent intent = this.getIntent();
         ListView lst;
         String source = intent.getExtras().getString("SOURCE");;
-        if (source != null && !source.equals("VolEventList")) {
+        if (source != null && Arrays.asList(orgActivities).contains(source)) {
             setContentView(R.layout.activity_event_list);
             lst = (ListView) findViewById(R.id.eventsListView);
         } else {
@@ -42,8 +43,8 @@ public class EventList extends AppCompatActivity implements AdapterView.OnItemCl
         myEvents = BackEnd.getEvents();
         CustomAdapter myAdapter = new CustomAdapter();
         lst.setAdapter(myAdapter);
-//
-//
+
+
 
 
         if (source != null && !source.equals("VolEventList")) {

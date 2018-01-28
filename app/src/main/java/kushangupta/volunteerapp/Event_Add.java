@@ -51,6 +51,7 @@ public class Event_Add extends AppCompatActivity {
                 //onSelectedDayChange(eventDate, );
 
                 Intent intent = new Intent(Event_Add.this, EventList.class);
+                intent.putExtra("SOURCE", "event_add");
                 startActivity(intent);
             }
         });}
