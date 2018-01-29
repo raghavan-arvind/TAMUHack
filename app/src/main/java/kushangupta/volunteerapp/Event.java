@@ -5,7 +5,7 @@ import android.media.Image;
 /**
  * Created by raghavan on 1/28/18.
  */
-
+// Class for events organizations can make
 public class Event {
 
     String title;
@@ -14,10 +14,6 @@ public class Event {
     String calendarDate;
     int numPeople;
     int numPeopleRequired;
-
-    public Event() {
-
-    }
 
     public Event(String title, String description, int numPeople, int numPeopleRequired, String address, String calendarDate) {
         this.title = title;

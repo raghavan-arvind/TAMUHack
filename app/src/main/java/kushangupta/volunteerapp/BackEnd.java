@@ -16,12 +16,15 @@ import java.util.ArrayList;
  */
 
 public class BackEnd {
+
     static DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
     private static ArrayList<Event> events = new ArrayList<Event>();
 
+    // Loads Firebase database
     public static void loadBackEnd() {
         myRef.keepSynced(true);
         myRef.child("Event").addValueEventListener(new ValueEventListener() {
+            // Checks for changes in events ie loads new data from database
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot c : snapshot.getChildren()) {
@@ -45,28 +48,32 @@ public class BackEnd {
         });
     }
 
+    // Creates an Array List of event objects
     public static ArrayList<Event> getEvents() {
         return new ArrayList<Event>(events);
     }
     ArrayList<Event> myEvent = BackEnd.getEvents();
 
-
+    // Adds events to database with given parameters
     public static void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location, String calendarDate) {
         Event e = new Event(name, description, numPeople, numPeopleRequired, location, calendarDate);
         myRef.child("Event").child(name).setValue(e);
     }
 
+    // Adds users to given event
     public static void joinEvent(String eventName, User user) {
         // null
         myRef.child("Event").child(eventName).child("Users").child(user.email).setValue(user);
     }
 
+    // Creates new user in database
     public static void newUser(String name, String email, String password) {
         User user = new User(name, email, password);
-        Log.d("i", "slkdfjkljsdfklj");
         myRef.child("Users").child(name).setValue(user);
     }
 
+    // REFERENCE ONLY
+    // Retrieves a single value from child
     public static void getName(String name){
         myRef.child("Users").child(name).addValueEventListener(new ValueEventListener() {
             @Override
@@ -79,6 +86,7 @@ public class BackEnd {
         });    }
 }
 
+// User class
 class User {
     String name;
     String email;

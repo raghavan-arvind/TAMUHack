@@ -13,8 +13,6 @@ import com.google.firebase.database.DatabaseReference;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DatabaseReference myRef;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
