@@ -11,11 +11,6 @@ import android.widget.TextView;
 
 public class EventSignup extends AppCompatActivity {
 
-    public static String addImageToGallery(final String filePath, final Context context) {
-
-        return filePath;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +44,8 @@ public class EventSignup extends AppCompatActivity {
             case 6:
                 imageView.setImageResource(R.drawable.image7);
                 break;
-
         }
+
         int pos = getIntent().getIntExtra("Position", 0);
         Event e = EventList.myEvents.get(pos);
 

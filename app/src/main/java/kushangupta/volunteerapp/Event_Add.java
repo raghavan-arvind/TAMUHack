@@ -27,6 +27,8 @@ public class Event_Add extends AppCompatActivity {
         final EditText eventAddress = (EditText) findViewById(R.id.eventAddress);
         final EditText numPeople = (EditText) findViewById(R.id.numberPicker);
         final CalendarView eventDate = (CalendarView) findViewById(R.id.eventDate);
+        final TimePicker time = (TimePicker) findViewById(R.id.time);
+        final Button eventCreateBtn = (Button) findViewById(R.id.eventCreateBtn);
 
         // Changes the date value based on what user clicks in calendar view
         eventDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -37,9 +39,6 @@ public class Event_Add extends AppCompatActivity {
                 day = i2;
             }
         });
-        final TimePicker time = (TimePicker) findViewById(R.id.time);
-
-        Button eventCreateBtn = (Button) findViewById(R.id.eventCreateBtn);
 
         eventCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,9 +68,8 @@ public class Event_Add extends AppCompatActivity {
                     dateString = t + " " + end;
                 }
 
-
+                // Adds Event with selected values
                 BackEnd.addEvent(name, desc, 0, num, address, dateString);
-                //onSelectedDayChange(eventDate, );
 
                 Intent intent = new Intent(Event_Add.this, EventList.class);
                 intent.putExtra("SOURCE", "event_add");

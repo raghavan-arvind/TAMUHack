@@ -25,7 +25,6 @@ public class EventList extends AppCompatActivity {
         Intent intent = this.getIntent();
         ListView lst;
         String source = intent.getExtras().getString("SOURCE");
-        ;
         if (source != null && Arrays.asList(orgActivities).contains(source)) {
             setContentView(R.layout.activity_event_list);
             lst = (ListView) findViewById(R.id.eventsListView);
@@ -37,6 +36,8 @@ public class EventList extends AppCompatActivity {
         myEvents = BackEnd.getEvents();
         CustomAdapter myAdapter = new CustomAdapter();
         lst.setAdapter(myAdapter);
+
+        // Listens for clicks on event within Event list
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -46,7 +47,7 @@ public class EventList extends AppCompatActivity {
             }
         });
 
-
+        // Adds floating button if organization
         if (source != null && !source.equals("VolEventList")) {
             FloatingActionButton addEventBtn = (FloatingActionButton) findViewById(R.id.addEventBtn);
             addEventBtn.setOnClickListener(new View.OnClickListener() {
@@ -59,12 +60,7 @@ public class EventList extends AppCompatActivity {
         }
     }
 
-    /*
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(EventList.this, EventSignup.class);
-        intent.putExtra("Position", position);
-        startActivity(intent);
-    } */
+    //
     class CustomAdapter extends BaseAdapter {
 
         @Override
