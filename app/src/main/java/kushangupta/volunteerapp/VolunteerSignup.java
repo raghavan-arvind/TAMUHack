@@ -30,6 +30,7 @@ public class VolunteerSignup extends AppCompatActivity {
                 String password = volPasswordEt.getText().toString();
                 String phoneNumber = volPhoneNumEt.getText().toString();
 
+                // Sends new user to Firebase
                 BackEnd.newUser(volName, email, password);
 
 
