@@ -20,21 +20,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/eventDescTv"
-        android:layout_width="362dp"
+        android:layout_width="340dp"
         android:layout_height="51dp"
         android:layout_below="@+id/eventTitleTv"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
         android:text="TextView"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventTitleTv" />
+        app:layout_constraintTop_toBottomOf="@+id/eventTitleTv"/>
 
     <TextView
         android:id="@+id/dateTv"
