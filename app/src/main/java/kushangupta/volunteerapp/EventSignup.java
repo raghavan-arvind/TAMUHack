@@ -1,11 +1,9 @@
 package kushangupta.volunteerapp;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,12 +11,17 @@ import android.widget.TextView;
 
 public class EventSignup extends AppCompatActivity {
 
+    public static String addImageToGallery(final String filePath, final Context context) {
+
+        return filePath;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_signup);
         String[] images = new String[7];
-        for(int i = 1; i <= 7; i++){
+        for (int i = 1; i <= 7; i++) {
             images[i - 1] = "@drawable/image" + i;
         }
         int randInt = (int) (Math.random() * 7);
@@ -76,14 +79,7 @@ public class EventSignup extends AppCompatActivity {
         numPeople.setText(Integer.toString(e.numPeopleRequired));
 
 
-
     }
-
-    public static String addImageToGallery(final String filePath, final Context context) {
-
-        return filePath;
-    }
-
 
 
 }

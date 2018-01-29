@@ -1,8 +1,5 @@
 package kushangupta.volunteerapp;
 
-import android.media.Image;
-import android.util.Log;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,6 +16,7 @@ public class BackEnd {
 
     static DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
     private static ArrayList<Event> events = new ArrayList<Event>();
+    ArrayList<Event> myEvent = BackEnd.getEvents();
 
     // Loads Firebase database
     public static void loadBackEnd() {
@@ -52,7 +50,6 @@ public class BackEnd {
     public static ArrayList<Event> getEvents() {
         return new ArrayList<Event>(events);
     }
-    ArrayList<Event> myEvent = BackEnd.getEvents();
 
     // Adds events to database with given parameters
     public static void addEvent(String name, String description, int numPeople, int numPeopleRequired, String location, String calendarDate) {
@@ -74,16 +71,18 @@ public class BackEnd {
 
     // REFERENCE ONLY
     // Retrieves a single value from child
-    public static void getName(String name){
+    public static void getName(String name) {
         myRef.child("Users").child(name).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
-        });    }
+        });
+    }
 }
 
 // User class

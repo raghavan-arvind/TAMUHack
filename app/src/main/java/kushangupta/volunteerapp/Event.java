@@ -1,7 +1,5 @@
 package kushangupta.volunteerapp;
 
-import android.media.Image;
-
 /**
  * Created by raghavan on 1/28/18.
  */
@@ -24,9 +22,13 @@ public class Event {
         this.address = address;
     }
 
-        public String getTitle() { return this.title; }
+    public String getTitle() {
+        return this.title;
+    }
 
-        public String getDescription() { return this.description; }
+    public String getDescription() {
+        return this.description;
+    }
 
 
 }

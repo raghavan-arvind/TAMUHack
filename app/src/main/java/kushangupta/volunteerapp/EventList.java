@@ -1,29 +1,22 @@
 package kushangupta.volunteerapp;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class EventList extends AppCompatActivity {
-    String[] orgActivities = {"event_add", "org_signup"};
     static ArrayList<kushangupta.volunteerapp.Event> myEvents;
-
+    String[] orgActivities = {"event_add", "org_signup"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +24,8 @@ public class EventList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
         ListView lst;
-        String source = intent.getExtras().getString("SOURCE");;
+        String source = intent.getExtras().getString("SOURCE");
+        ;
         if (source != null && Arrays.asList(orgActivities).contains(source)) {
             setContentView(R.layout.activity_event_list);
             lst = (ListView) findViewById(R.id.eventsListView);
@@ -53,7 +47,6 @@ public class EventList extends AppCompatActivity {
         });
 
 
-
         if (source != null && !source.equals("VolEventList")) {
             FloatingActionButton addEventBtn = (FloatingActionButton) findViewById(R.id.addEventBtn);
             addEventBtn.setOnClickListener(new View.OnClickListener() {
@@ -65,45 +58,46 @@ public class EventList extends AppCompatActivity {
             });
         }
     }
-        /*
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(EventList.this, EventSignup.class);
-            intent.putExtra("Position", position);
-            startActivity(intent);
-        } */
-        class CustomAdapter extends BaseAdapter {
 
-            @Override
-            public int getCount() {
-                return myEvents.size();
-            }
+    /*
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(EventList.this, EventSignup.class);
+        intent.putExtra("Position", position);
+        startActivity(intent);
+    } */
+    class CustomAdapter extends BaseAdapter {
 
-            @Override
-            public Object getItem(int position) {
-                return null;
-            }
-
-            @Override
-            public long getItemId(int position) {
-                return 0;
-            }
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                convertView = getLayoutInflater().inflate(R.layout.custom_list_layout, null);
-
-                TextView eventTitleTv = (TextView) convertView.findViewById(R.id.eventTitleTv);
-                TextView eventDescTv = (TextView) convertView.findViewById(R.id.eventDescTv);
-                TextView eventDate = (TextView) convertView.findViewById(R.id.dateTv);
-                eventTitleTv.setText(myEvents.get(position).getTitle());
-                eventDescTv.setText(myEvents.get(position).getDescription());
-                eventDate.setText(myEvents.get(position).calendarDate);
-
-
-                return convertView;
-
-            }
+        @Override
+        public int getCount() {
+            return myEvents.size();
         }
 
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = getLayoutInflater().inflate(R.layout.custom_list_layout, null);
+
+            TextView eventTitleTv = (TextView) convertView.findViewById(R.id.eventTitleTv);
+            TextView eventDescTv = (TextView) convertView.findViewById(R.id.eventDescTv);
+            TextView eventDate = (TextView) convertView.findViewById(R.id.dateTv);
+            eventTitleTv.setText(myEvents.get(position).getTitle());
+            eventDescTv.setText(myEvents.get(position).getDescription());
+            eventDate.setText(myEvents.get(position).calendarDate);
+
+
+            return convertView;
+
+        }
     }
+
+}
 

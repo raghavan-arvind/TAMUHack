@@ -1,27 +1,21 @@
 package kushangupta.volunteerapp;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
-import android.widget.NumberPicker;
-import android.widget.TextView;
 import android.widget.TimePicker;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class Event_Add extends AppCompatActivity {
 
-    int year = 0; int month = 0; int day = 0;
+    int year = 0;
+    int month = 0;
+    int day = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +28,13 @@ public class Event_Add extends AppCompatActivity {
         final EditText numPeople = (EditText) findViewById(R.id.numberPicker);
         final CalendarView eventDate = (CalendarView) findViewById(R.id.eventDate);
 
-
+        // Changes the date value based on what user clicks in calendar view
         eventDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                year = i; month = i1+1; day = i2;
+                year = i;
+                month = i1 + 1;
+                day = i2;
             }
         });
         final TimePicker time = (TimePicker) findViewById(R.id.time);
@@ -69,10 +65,7 @@ public class Event_Add extends AppCompatActivity {
 
                     t = String.format("%d/%02d %02d:%02d", month, day, hours, time.getMinute());
 
-
-
                     // converting date to readable
-
                     dateString = t + " " + end;
                 }
 
@@ -84,7 +77,8 @@ public class Event_Add extends AppCompatActivity {
                 intent.putExtra("SOURCE", "event_add");
                 startActivity(intent);
             }
-        });}
+        });
     }
+}
 
 
